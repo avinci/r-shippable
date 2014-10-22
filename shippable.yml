@@ -17,7 +17,9 @@ install:
   - ./install-r-devel
 
 script:
-  - "[ ! -d ~/R ] && mkdir ~/R"
+  - mkdir -p ~/R
   - cp .Renviron .Rprofile ~/
   - R -f r-config.R
   - Rd -f r-config.R
+
+cache: true
