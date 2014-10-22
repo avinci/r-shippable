@@ -8,6 +8,9 @@ python:
 build_image: avinci/pytest01
 
 before_install:
+  - sudo echo "en_US.UTF-8 UTF-8" >> /var/lib/locales/supported.d/local;
+  - sudo locale-gen en_US en_US.UTF-8;
+  - sudo dpkg-reconfigure locales;
   - ./r-cran-pkgs
   - git config --global user.name "Avi C"
   - git config --global user.email "avi@shippable.com"
